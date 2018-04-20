@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_go_out"
+        android:icon="@mipmap/title_go_out_unselet"
+        android:title="@string/title_go_out" />
+
+    <item
+        android:id="@+id/navigation_station"
+        android:icon="@mipmap/title_station_unselet"
+        android:title="@string/title_station" />
+
+    <item
+        android:id="@+id/navigation_find"
+        android:icon="@mipmap/title_find_unselet"
+        android:title="@string/title_find" />
+
+    <item
+        android:id="@+id/navigation_mine"
+        android:icon="@mipmap/title_mine_unselet"
+        android:title="@string/title_mine" />
+
+</menu>

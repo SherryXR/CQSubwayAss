@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.sherry.cqsubwayass.ui.activity.RegisterActivity">
+
+
+    <include layout="@layout/view_toolbar"></include>
+
+
+    <RelativeLayout
+        android:layout_marginTop="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_name_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/ic_name"/>
+                <EditText
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_name_edit"
+                    android:background="@null"
+                    android:layout_toRightOf="@+id/register_name_image"
+                    android:hint="请输入昵称"
+                    android:textColor="@color/grey_dark"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="12dp"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cdcdcd"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_email_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/ic_email"/>
+                <EditText
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_email_edit"
+                    android:background="@null"
+                    android:layout_toRightOf="@+id/register_email_image"
+                    android:hint="请输入邮箱"
+                    android:textColor="@color/grey_dark"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="12dp"
+                    />
+
+                <!--<Button-->
+                    <!--android:id="@+id/register_email_test"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:text="点击验证"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:background="@color/colorPrimary"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="25dp" />-->
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cdcdcd"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_password_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/ic_password"/>
+                <EditText
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_password_edit"
+                    android:background="@null"
+                    android:layout_toRightOf="@+id/register_password_image"
+                    android:hint="请输入密码"
+                    android:textColor="@color/grey_dark"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="12dp"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cdcdcd"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_password_image2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/ic_password"/>
+                <EditText
+                    android:layout_centerVertical="true"
+                    android:id="@+id/register_password_edit2"
+                    android:background="@null"
+                    android:layout_toRightOf="@+id/register_password_image2"
+                    android:hint="请确认密码"
+                    android:textColor="@color/grey_dark"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="12dp"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cdcdcd"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/register_btn"
+        android:textSize="18sp"
+        android:text="注册"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_blue_all"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+
+</LinearLayout>

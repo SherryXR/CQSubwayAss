@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="CQSubwayAss" ></dbname>
+
+    <version value="2" ></version>
+
+    <list>
+        <mapping class="com.sherry.cqsubwayass.model.db.History"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwayOne"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwayTwo"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwayThree"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwayThreeOther"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwayFive"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwaySix"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwaySixOther"></mapping>
+        <mapping class="com.sherry.cqsubwayass.model.db.DBSubwayTen"></mapping>
+
+
+    </list>
+</litepal>

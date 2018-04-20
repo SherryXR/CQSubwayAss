@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey_bg">
+
+    <include layout="@layout/view_toolbar_right"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:id="@+id/iv_app_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_logo" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_app_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="@string/app_name"
+            android:textColor="@color/grey_dark"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_app_verson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_app_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="v1.0.0"
+            android:textColor="@color/grey_light"
+            android:textSize="15sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/about_update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:textColor="@color/grey_dark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:text="版本更新"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginRight="16dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_right_grey"/>
+        </RelativeLayout>
+        <View
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/grey_bg"/>
+        <RelativeLayout
+            android:id="@+id/about_introduce"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:textColor="@color/grey_dark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:text="功能介绍"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginRight="16dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_right_grey"/>
+        </RelativeLayout>
+        <View
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/grey_bg"/>
+        <RelativeLayout
+            android:id="@+id/about_us"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:textColor="@color/grey_dark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:text="联系我们"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginRight="16dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_right_grey"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

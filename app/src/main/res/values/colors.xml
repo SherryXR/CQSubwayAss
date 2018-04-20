@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#F08080</color>-->
+    <!--<color name="colorPrimaryDark">#F08080</color>-->
+    <color name="colorPrimary">#4284d9</color>
+    <color name="colorPrimaryDark">#4284d9</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="guide_blue">#4284d9</color>
+
+    <color name="titleImage">#666666</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="grey_dark">#333333</color>
+    <color name="grey_light">#666666</color>
+    <color name="grey_bg">#F3F3F3</color>
+    <color name="pink_text">#9dc8fd</color>
+
+     <!-- 地铁颜色 -->
+    <color name="subway_one">#D63542</color>
+    <color name="subway_two">#2CC427</color>
+    <color name="subway_three">#497ACC</color>
+    <color name="subway_ten">#DD68CD</color>
+    <color name="subway_five">#54C7EF</color>
+    <color name="subway_six">#F06484</color>
+
+    <color name="yellow">#fdbe52</color>
+</resources>

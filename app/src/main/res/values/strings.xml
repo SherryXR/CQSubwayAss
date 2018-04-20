@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">重庆轻轨小贴士</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_go_out">路线</string>
+    <string name="title_station">站点</string>
+    <string name="title_find">发现</string>
+    <string name="title_mine">我的</string>
+    <string name="go_out_search">查找路线</string>
+
+    <string name="toolbar_station">站点信息</string>
+    <string name="toolbar_find">发现</string>
+
+    <string name="subway_one">轻轨一号线</string>
+    <string name="subway_two">轻轨二号线</string>
+    <string name="subway_three">轻轨三号线</string>
+    <string name="subway_five">轻轨五号线</string>
+    <string name="subway_ten">轻轨十号线</string>
+    <string name="subway_six">轻轨六号线</string>
+    <string name="subway_three_other">轻轨三号线北延线</string>
+    <string name="subway_six_other">轻轨六号线国博线</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="prepare_text1">量身定制</string>
+    <string name="prepare_text2">为你准备最好的出行路线</string>
+
+
+    <string name="hyd">洪崖洞是逛山城老街、观赏两江风光、品尝当思没事的好去处。</string>
+    <string name="cqk">每个城市都有一条主打当地美食的商业街，北京的王府井、成都的宽窄巷子、武汉的户部巷...重庆的磁器口古镇也是这样的存在。</string>
+    <string name="cjsd">在众多影视剧、综艺节目中出现的长江索道，对于重庆本地人来说只是交通工具，目前已经成为游客最青睐的体验之一。</string>
+    <string name="jfb">解放碑是重庆的代名词，是全国唯一一座抗日胜利纪念碑，虽已淹没在周围林立的高楼大厦中，但这座解放碑在重庆有着无法被替代的地位，每年跨年时是全重庆最热闹的地方。</string>
+    <string name="nsyks">南山一棵树是围绕着一棵重庆老黄桷树而修建的观景台，因而得名。这里拥有观看山城夜景的最佳角度，能将整个重庆的山与水、江穿高楼、桥上车水马龙的场景尽收眼底。</string>
+    <string name="scdsbd">步道，就是方便当地人的步行通道。山城步道是老重庆的印记，漫步石板路的小巷，是体验山城韵味的最佳方式之一。</string>
+    <string name="cm">学校像是一个微缩版的北京798，有很多有趣的雕塑，处处充满了艺术气息。校园不大，人少幽静，绿树成荫。</string>
+    <string name="ctm">朝天门曾是重庆十七座古城门之一，现在其实是个超大广场及码头。三峡游轮、观光游船和去洋人街的渡轮都从这出发。</string>
+    <string name="lzb">最有名气的就是捷运穿大楼而过的地铁站，这简直就是重庆必到的打卡瞻仰点——李子坝轻轨站。</string>
+    <string name="dft">皇冠大扶梯，是重庆的一个路口大扶梯，连接了两路口和重庆火车菜园坝站，是重庆特色交通之一，《极限挑战》曾经在这里拍摄。</string>
+    <string name="yrj">洋人街游乐场里有很多游乐设施，比如大摆锤、摇摇椅，不过有些破旧。比较适合家长带小孩子来玩。</string>
+    <string name="xhlj">重庆三大吊脚楼集中区之一的下浩老街，爬满青苔的屋檐，风雨剥蚀的粉墙是历史最忠实的见证。</string>
+    <string name="zwy">南山植物园是重庆市民比较喜欢的踏青地点，园内有蔷薇园、兰园、梅园、山茶园、盆景园、大金鹰园等，一年四季，花展不断。</string>
+    <string name="dwy">重庆动物园位于九龙坡区杨家坪，占地面积41万平方米，是重庆市较大的综合性公园。公园始建于1954年，原名西区公园，1958年后以展出动物为主，遂改现名。</string>
+    <string name="yby">园博园位于重庆市北部新区龙景湖公园，四面临街，可远眺缙云山、鸡公山，嘉陵江温塘峡、观音峡等山景、水景、峡景和北碚城市景观</string>
+    <string name="nbl">重庆南滨路处于重庆市的中心地位，它北临长江，背依南山，可观最美渝中夜景；</string>
+    <string name="bwg">庆博物馆的前身，对面是人民大礼堂，中间是一个超大型的广场。站在博物馆门前拍大礼堂全景也是一流。</string>
+
+
+</resources>

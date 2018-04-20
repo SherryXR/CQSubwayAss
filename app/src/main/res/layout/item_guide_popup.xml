@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:id="@+id/item_guide_popup_icon"
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_area"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <View
+        android:background="@color/grey_light"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="24dp"
+        android:layout_toRightOf="@+id/item_guide_popup_icon"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/item_guide_popup_name_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+             />
+
+        <TextView
+            android:maxLines="1"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:id="@+id/item_guide_popup_data_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/grey_light"
+            android:textSize="14sp"
+            />
+
+    </LinearLayout>
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey_light"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"/>
+</RelativeLayout>
