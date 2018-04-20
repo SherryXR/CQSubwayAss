@@ -17,6 +17,8 @@ import com.sherry.cqsubwayass.model.callback.OnItemClickListener;
 import com.sherry.cqsubwayass.model.impl.FindBeanModel;
 import com.sherry.cqsubwayass.ui.adapter.FindShowAdapter;
 import com.sherry.cqsubwayass.utils.DialogUtils;
+import com.sherry.cqsubwayass.utils.StringSplit;
+import com.sherry.cqsubwayass.utils.UserUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,8 @@ public class CollectActivity extends AppCompatActivity {
     RecyclerView collect;
     private FindShowAdapter adapter;
     private IFindBean iFindBean;
-    private List<FindBean> list = new ArrayList<>();
+    private List<FindBean> lists = new ArrayList<>();
+    private List<String> collectList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +52,25 @@ public class CollectActivity extends AppCompatActivity {
         staggeredGridLayoutManager.setReverseLayout(false);
         collect.setLayoutManager(staggeredGridLayoutManager);
         DialogUtils.onProcess(CollectActivity.this,"温馨提示","正在加载数据....");
+        collectList= StringSplit.PraseCollect(UserUtils.getCollect(CollectActivity.this));
         iFindBean.loadAllData(new LoadFindInfoCallBack() {
             @Override
             public void onSuccess(final List<FindBean> list) {
-                adapter = new FindShowAdapter(list);
+
+                for (int i= 0;i<list.size();i++){
+                    for (int j =0;j<collectList.size();j++){
+                        if (collectList.get(j).equals(list.get(i).getTitle())){
+                            lists.add(list.get(i));
+                        }
+                    }
+                }
+                adapter = new FindShowAdapter(lists);
 
                 adapter.setOnItemClickLitener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(CollectActivity.this, FindInfoActivity.class);
-                        intent.putExtra("findScreen",list.get(position));
+                        intent.putExtra("findScreen",lists.get(position));
                         startActivity(intent);
                     }
                 });
