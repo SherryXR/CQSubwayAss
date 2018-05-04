@@ -8,12 +8,18 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sherry.cqsubwayass.R;
+import com.sherry.cqsubwayass.model.ICollect;
 import com.sherry.cqsubwayass.model.IFindBean;
 import com.sherry.cqsubwayass.model.bean.FindBean;
+import com.sherry.cqsubwayass.model.bmob.Collect;
+import com.sherry.cqsubwayass.model.bmob.User;
+import com.sherry.cqsubwayass.model.callback.BaseCallBack;
 import com.sherry.cqsubwayass.model.callback.LoadFindInfoCallBack;
 import com.sherry.cqsubwayass.model.callback.OnItemClickListener;
+import com.sherry.cqsubwayass.model.impl.CollectModel;
 import com.sherry.cqsubwayass.model.impl.FindBeanModel;
 import com.sherry.cqsubwayass.ui.adapter.FindShowAdapter;
 import com.sherry.cqsubwayass.utils.DialogUtils;
@@ -26,6 +32,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 
 public class CollectActivity extends AppCompatActivity {
 
@@ -36,7 +46,7 @@ public class CollectActivity extends AppCompatActivity {
     @BindView(R.id.collect)
     RecyclerView collect;
     private FindShowAdapter adapter;
-    private IFindBean iFindBean;
+    private ICollect iCollect;
     private List<FindBean> lists = new ArrayList<>();
     private List<String> collectList = new ArrayList<>();
 
@@ -45,47 +55,14 @@ public class CollectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collect);
         ButterKnife.bind(this);
-        iFindBean = new FindBeanModel(CollectActivity.this);
+        iCollect = new CollectModel(CollectActivity.this);
         toolbarTitleLeft.setText("个人收藏");
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL );
         //通过布局管理器控制条目排列的顺序  true:反向显示 false:正向显示
         staggeredGridLayoutManager.setReverseLayout(false);
         collect.setLayoutManager(staggeredGridLayoutManager);
         DialogUtils.onProcess(CollectActivity.this,"温馨提示","正在加载数据....");
-        collectList= StringSplit.PraseCollect(UserUtils.getCollect(CollectActivity.this));
-        iFindBean.loadAllData(new LoadFindInfoCallBack() {
-            @Override
-            public void onSuccess(final List<FindBean> list) {
-
-                for (int i= 0;i<list.size();i++){
-                    for (int j =0;j<collectList.size();j++){
-                        if (collectList.get(j).equals(list.get(i).getTitle())){
-                            lists.add(list.get(i));
-                        }
-                    }
-                }
-                adapter = new FindShowAdapter(lists);
-
-                adapter.setOnItemClickLitener(new OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(CollectActivity.this, FindInfoActivity.class);
-                        intent.putExtra("findScreen",lists.get(position));
-                        startActivity(intent);
-                    }
-                });
-                DialogUtils.dissmissProcess();
-
-                collect.setAdapter(adapter);
-            }
-
-            @Override
-            public void onFailure(String erro) {
-                DialogUtils.dissmissProcess();
-
-            }
-        });
-
+        loadData();
 
      }
 
@@ -93,5 +70,24 @@ public class CollectActivity extends AppCompatActivity {
     @OnClick(R.id.guide_back_left)
     public void onViewClicked() {
         finish();
+    }
+
+    private void loadData(){
+        iCollect.getColelct(new BaseCallBack<List<FindBean>>() {
+            @Override
+            public void onSuccess(List<FindBean> bean) {
+                adapter = new FindShowAdapter(bean);
+                collect.setAdapter(adapter);
+                DialogUtils.dissmissProcess();
+            }
+
+            @Override
+            public void onFailure(String error) {
+                Toast.makeText(CollectActivity.this,error,Toast.LENGTH_SHORT).show();
+                DialogUtils.dissmissProcess();
+
+            }
+        });
+
     }
 }

@@ -14,6 +14,26 @@ public class FindBean implements Serializable{
     private String url;
     private String message;
     private String title;
+    private String id;
+
+    private String collectID;
+
+    public String getCollectID() {
+        return collectID;
+    }
+
+    public void setCollectID(String collectID) {
+        this.collectID = collectID;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private List<Integer> imageLists = new ArrayList<>();
 
     public String getTitle() {

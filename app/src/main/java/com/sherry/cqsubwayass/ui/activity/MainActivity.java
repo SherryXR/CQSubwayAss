@@ -14,6 +14,7 @@ import com.sherry.cqsubwayass.presenter.MainActivityPresenter;
 import com.sherry.cqsubwayass.ui.adapter.MainViewPagerAdapter;
 import com.sherry.cqsubwayass.ui.view.IMainActivityView;
 import com.sherry.cqsubwayass.utils.BottomNavigationViewHelper;
+import com.sherry.cqsubwayass.widget.NoScrollViewPager;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class MainActivity extends BaseActivty implements IMainActivityView {
     @BindView(R.id.navigation)
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.viewpager)
-    ViewPager viewPager;
+    NoScrollViewPager viewPager;
     private MenuItem menuItem;
 
     MainViewPagerAdapter adapter;
@@ -41,6 +42,8 @@ public class MainActivity extends BaseActivty implements IMainActivityView {
          * BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
          * ------------------------------------------------------------------------
          */
+        viewPager.setScanScroll(false);
+        viewPager.setOffscreenPageLimit(3);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="5dp"
+    app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
     android:layout_margin="6dp"
     android:layout_height="wrap_content">
@@ -17,8 +17,8 @@
             android:src="@mipmap/jfb1"
             android:id="@+id/item_find_show_image"
             android:layout_width="match_parent"
-            android:scaleType="fitXY"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
             />
         <RelativeLayout
             android:layout_marginTop="12dp"
@@ -49,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:padding="6dp"
             android:textSize="12sp"/>
 
 

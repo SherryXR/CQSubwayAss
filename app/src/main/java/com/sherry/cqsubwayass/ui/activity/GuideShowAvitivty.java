@@ -88,6 +88,10 @@ public class GuideShowAvitivty extends BaseActivty {
         List<Station> subwayTwoList = new ArrayList<>();
         List<Station> subwayThreeList = new ArrayList<>();
         List<Station> subwaySixList = new ArrayList<>();
+        List<Station> subwayFiveList = new ArrayList<>();
+        List<Station> subwayTenList = new ArrayList<>();
+        List<Station> subwaySixOtherList = new ArrayList<>();
+        List<Station> subwayThreeOtherList = new ArrayList<>();
 
         for (DBSubwayOne bean : DataSupport.findAll(DBSubwayOne.class)) {
             subwayOneList.add(new Station(bean.getStation_name(), "1号线"));
@@ -102,16 +106,16 @@ public class GuideShowAvitivty extends BaseActivty {
             subwaySixList.add(new Station(bean.getStation_name(), "6号线"));
         }
         for (DBSubwayFive bean : DataSupport.findAll(DBSubwayFive.class)) {
-            subwayOneList.add(new Station(bean.getStation_name(), "5号线"));
+            subwayFiveList.add(new Station(bean.getStation_name(), "5号线"));
         }
         for (DBSubwayTen bean : DataSupport.findAll(DBSubwayTen.class)) {
-            subwayTwoList.add(new Station(bean.getStation_name(), "10号线"));
+            subwayTenList.add(new Station(bean.getStation_name(), "10号线"));
         }
         for (DBSubwayThreeOther bean : DataSupport.findAll(DBSubwayThreeOther.class)) {
-            subwayThreeList.add(new Station(bean.getStation_name(), "3号线北延线"));
+            subwayThreeOtherList.add(new Station(bean.getStation_name(), "3号线北延线"));
         }
         for (DBSubwaySixOther bean : DataSupport.findAll(DBSubwaySixOther.class)) {
-            subwaySixList.add(new Station(bean.getStation_name(), "6号线国博线"));
+            subwaySixOtherList.add(new Station(bean.getStation_name(), "6号线国博线"));
         }
 
         for (int j = 0; j < subwayOneList.size(); j++) {
@@ -138,14 +142,39 @@ public class GuideShowAvitivty extends BaseActivty {
                 subwaySixList.get(j + 1).prev = subwaySixList.get(j);
             }
         }
-        totalStation = subwayOneList.size() + subwayTwoList.size() + subwayThreeList.size() + subwaySixList.size();
-
-
+        for (int j = 0; j < subwayFiveList.size(); j++) {
+            if (j < subwayFiveList.size() - 1) {
+                subwayFiveList.get(j).next = subwayFiveList.get(j + 1);
+                subwayFiveList.get(j + 1).prev = subwayFiveList.get(j);
+            }
+        }
+        for (int j = 0; j < subwayTenList.size(); j++) {
+            if (j < subwayTenList.size() - 1) {
+                subwayTenList.get(j).next = subwayTenList.get(j + 1);
+                subwayTenList.get(j + 1).prev = subwayTenList.get(j);
+            }
+        }
+        for (int j = 0; j < subwayThreeOtherList.size(); j++) {
+            if (j < subwayThreeOtherList.size() - 1) {
+                subwayThreeOtherList.get(j).next = subwayThreeOtherList.get(j + 1);
+                subwayThreeOtherList.get(j + 1).prev = subwayThreeOtherList.get(j);
+            }
+        }
+        for (int j = 0; j < subwaySixOtherList.size(); j++) {
+            if (j < subwaySixOtherList.size() - 1) {
+                subwaySixOtherList.get(j).next = subwaySixOtherList.get(j + 1);
+                subwaySixOtherList.get(j + 1).prev = subwaySixOtherList.get(j);
+            }
+        }
+        totalStation = subwayOneList.size() + subwayTwoList.size() + subwayThreeList.size() + subwaySixList.size()+subwayFiveList.size()+subwayTenList.size()+subwaySixOtherList.size()+subwayThreeOtherList.size();
         lineSet.add(subwayOneList);
         lineSet.add(subwayTwoList);
         lineSet.add(subwayThreeList);
         lineSet.add(subwaySixList);
-
+        lineSet.add(subwayFiveList);
+        lineSet.add(subwayTenList);
+        lineSet.add(subwaySixOtherList);
+        lineSet.add(subwayThreeOtherList);
     }
 
 

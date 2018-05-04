@@ -49,6 +49,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.setUrl(article.getUrl());
                             findBean.setMessage(context.getResources().getString(R.string.hyd));
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             list.add(findBean);
                             continue;
                         }
@@ -61,6 +62,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
                             findBean.setMessage(context.getResources().getString(R.string.cqk));
+                            findBean.setId(article.getObjectId());
                             list.add(findBean);
                             continue;
                         }
@@ -72,6 +74,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.cjsd4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.cjsd));
                             list.add(findBean);
                             continue;
@@ -84,6 +87,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.jfb4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.jfb));
                             list.add(findBean);
                             continue;
@@ -96,6 +100,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.yks4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.nsyks));
                             list.add(findBean);
                             continue;
@@ -108,6 +113,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.scbd4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.scdsbd));
                             list.add(findBean);
                             continue;
@@ -120,6 +126,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.cm4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.cm));
                             list.add(findBean);
                             continue;
@@ -132,6 +139,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.ctm4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.ctm));
                             list.add(findBean);
                             continue;
@@ -144,6 +152,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.lzb4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.lzb));
                             list.add(findBean);
                             continue;
@@ -156,6 +165,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.dft4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.dft));
                             list.add(findBean);
                             continue;
@@ -168,6 +178,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.yrj4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.yrj));
                             list.add(findBean);
                             continue;
@@ -180,6 +191,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.xhlj4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.xhlj));
                             list.add(findBean);
                             continue;
@@ -191,6 +203,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.zwy3);
                             findBean.addImage(R.mipmap.zwy4);
                             findBean.setUrl(article.getUrl());
+                            findBean.setId(article.getObjectId());
                             findBean.setTitle(article.getTitle());
                             findBean.setMessage(context.getResources().getString(R.string.zwy));
                             list.add(findBean);
@@ -204,6 +217,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.dwy4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.dwy));
                             list.add(findBean);
                             continue;
@@ -216,6 +230,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.yby4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
+                            findBean.setId(article.getObjectId());
                             findBean.setMessage(context.getResources().getString(R.string.yby));
                             list.add(findBean);
                             continue;
@@ -225,6 +240,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.nbl1);
                             findBean.addImage(R.mipmap.nbl2);
                             findBean.addImage(R.mipmap.nbl3);
+                            findBean.setId(article.getObjectId());
                             findBean.addImage(R.mipmap.nbl4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());
@@ -237,6 +253,7 @@ public class FindBeanModel implements IFindBean {
                             findBean.addImage(R.mipmap.sxbwg1);
                             findBean.addImage(R.mipmap.sxbwg2);
                             findBean.addImage(R.mipmap.sxbwg3);
+                            findBean.setId(article.getObjectId());
                             findBean.addImage(R.mipmap.sxbwg4);
                             findBean.setUrl(article.getUrl());
                             findBean.setTitle(article.getTitle());

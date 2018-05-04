@@ -3,6 +3,7 @@ package com.sherry.cqsubwayass.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -14,8 +15,11 @@ import android.widget.Toast;
 
 import com.sherry.cqsubwayass.R;
 import com.sherry.cqsubwayass.app.BaseActivty;
+import com.sherry.cqsubwayass.model.ICollect;
 import com.sherry.cqsubwayass.model.bean.FindBean;
 import com.sherry.cqsubwayass.model.bmob.User;
+import com.sherry.cqsubwayass.model.callback.BaseCallBack;
+import com.sherry.cqsubwayass.model.impl.CollectModel;
 import com.sherry.cqsubwayass.utils.StringSplit;
 import com.sherry.cqsubwayass.utils.UserUtils;
 import com.squareup.picasso.Picasso;
@@ -45,78 +49,57 @@ public class FindInfoActivity extends BaseActivty {
     @BindView(R.id.find_info_web)
     WebView findInfoWeb;
     @BindView(R.id.find_info_collect)
-    ImageView findInfoCollect;
+    FloatingActionButton findInfoCollect;
 
-    private boolean isCollect =false;
     private WebSettings webSettings;
-    private List<String> collects = new ArrayList<>();
 
-
+    private boolean isCollected = false;
     private FindBean findBean;
+    private ICollect iCollect;
+    private String collectID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_info);
         ButterKnife.bind(this);
+        iCollect = new CollectModel(FindInfoActivity.this);
         Intent intent = getIntent();
         findBean = (FindBean)intent.getSerializableExtra("findScreen");
         toolbarTitleLeft.setText(findBean.getTitle());
-        collects= StringSplit.PraseCollect(UserUtils.getCollect(FindInfoActivity.this));
-        for (int i =0;i<collects.size();i++){
-            if (collects.get(i).equals(findBean.getTitle())){
-                isCollect =true;
-                break;
-            }
-        }
-
-        if (isCollect){
-            findInfoCollect.setImageResource(R.mipmap.ic_collected);
-        }
-
+        loadCollect();
         findInfoCollect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isCollect){
-                    findInfoCollect.setImageResource(R.mipmap.ic_collected_unselect);
-                    String str = "";
-                    for (int i =0;i<collects.size();i++){
-                        if(collects.get(i).equals(findBean.getTitle())){
-
-                        }else {
-                            str = str+","+collects.get(i);
-                        }
-                    }
-                    UserUtils.putCollect(FindInfoActivity.this,str);
-                    User newUser = new User();
-                    newUser.setCollect(str);
-                    BmobUser bmobUser = BmobUser.getCurrentUser(User.class);
-                    newUser.update(bmobUser.getObjectId(),new UpdateListener() {
+                if (isCollected){
+                    iCollect.cancelCollect(collectID, new BaseCallBack<String>() {
                         @Override
-                        public void done(BmobException e) {
-                            if(e==null){
-                                Toast.makeText(FindInfoActivity.this,"已取消收藏",Toast.LENGTH_SHORT).show();
-                            }else{
-                            }
+                        public void onSuccess(String bean) {
+                            findInfoCollect.setImageResource(R.mipmap.ic_collected_unselect);
+                            Toast.makeText(FindInfoActivity.this,"取消收藏成功",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onFailure(String error) {
+                            Toast.makeText(FindInfoActivity.this,"取消收藏失败",Toast.LENGTH_SHORT).show();
+
                         }
                     });
                 }else {
-                    findInfoCollect.setImageResource(R.mipmap.ic_collected);
-                    String str = UserUtils.getCollect(FindInfoActivity.this)+","+findBean.getTitle();
-
-                    UserUtils.putCollect(FindInfoActivity.this,str);
-                    User newUser = new User();
-                    newUser.setCollect(str);
-                    BmobUser bmobUser = BmobUser.getCurrentUser(User.class);
-                    newUser.update(bmobUser.getObjectId(),new UpdateListener() {
+                    iCollect.postCollect(findBean.getId(), new BaseCallBack<String>() {
                         @Override
-                        public void done(BmobException e) {
-                            if(e==null){
-                                Toast.makeText(FindInfoActivity.this,"已收藏",Toast.LENGTH_SHORT).show();
-                            }else{
-                            }
+                        public void onSuccess(String bean) {
+                            findInfoCollect.setImageResource(R.mipmap.ic_collected);
+                            Toast.makeText(FindInfoActivity.this,"收藏成功",Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onFailure(String error) {
+                            Toast.makeText(FindInfoActivity.this,error,Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
+
             }
         });
         initBanner();
@@ -171,6 +154,25 @@ public class FindInfoActivity extends BaseActivty {
         finish();
     }
 
+    private void loadCollect(){
+        iCollect.getColelct(new BaseCallBack<List<FindBean>>() {
+            @Override
+            public void onSuccess(List<FindBean> bean) {
+                for (int i=0;i<bean.size();i++){
+                    if (findBean.getId().equals(bean.get(i).getId())){
+                        isCollected = true;
+                        collectID = bean.get(i).getCollectID();
+                        findInfoCollect.setImageResource(R.mipmap.ic_collected);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(String error) {
+
+            }
+        });
+    }
 
     private class MyLoader extends ImageLoader {
         @Override
