@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.sherry.cqsubwayass.utils.ActivityCollector;
 
 /**
- * Created by Kevin Liu on 2018/4/16.
+ * Created by Sherry on 2018/4/16.
  */
 
 public class BaseActivty extends AppCompatActivity {

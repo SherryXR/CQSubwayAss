@@ -1,7 +1,7 @@
 package com.sherry.cqsubwayass.config;
 
 /**
- * Created by Kevin Liu on 2018/4/9.
+ * Created by Sherry on 2018/4/9.
  */
 
 public class Contants {

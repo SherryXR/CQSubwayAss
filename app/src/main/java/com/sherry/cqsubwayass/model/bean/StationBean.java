@@ -5,7 +5,7 @@ import com.sherry.cqsubwayass.utils.StringSplit;
 import java.io.Serializable;
 
 /**
- * Created by Kevin Liu on 2018/4/13.
+ * Created by Sherry on 2018/4/13.
  */
 
 public class StationBean implements Serializable{

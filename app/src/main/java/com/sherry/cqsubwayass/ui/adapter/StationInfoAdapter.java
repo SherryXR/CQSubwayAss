@@ -12,7 +12,7 @@ import com.sherry.cqsubwayass.model.bean.StationBean;
 import java.util.List;
 
 /**
- * Created by Kevin Liu on 2018/4/14.
+ * Created by Sherry on 2018/4/14.
  */
 
 public class StationInfoAdapter extends RecyclerView.Adapter<StationInfoAdapter.StationInfoViewHolder>{

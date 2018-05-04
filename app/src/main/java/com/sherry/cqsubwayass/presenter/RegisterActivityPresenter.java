@@ -7,7 +7,7 @@ import com.sherry.cqsubwayass.model.callback.RegisterCallBack;
 import com.sherry.cqsubwayass.ui.view.IRegisterActivityView;
 
 /**
- * Created by Kevin Liu on 2018/4/15.
+ * Created by Sherry on 2018/4/15.
  */
 
 public class RegisterActivityPresenter {

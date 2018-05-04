@@ -17,7 +17,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
- * Created by Kevin Liu on 2018/4/16.
+ * Created by Sherry on 2018/4/16.
  */
 
 public class DialogUtils {

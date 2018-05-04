@@ -3,7 +3,7 @@ package com.sherry.cqsubwayass.utils;
 import android.content.Context;
 
 /**
- * Created by Kevin Liu on 2018/4/16.
+ * Created by Sherry on 2018/4/16.
  */
 
 public class UserUtils {

@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import java.util.List;
 
 /**
- * Created by Kevin Liu on 2018/4/11.
+ * Created by Sherry on 2018/4/11.
  */
 
 public interface IMainActivityView {

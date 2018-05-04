@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import java.util.List;
 
 /**
- * Created by Kevin Liu on 2018/4/11.
+ * Created by Sherry on 2018/4/11.
  */
 
 public class MainTag {

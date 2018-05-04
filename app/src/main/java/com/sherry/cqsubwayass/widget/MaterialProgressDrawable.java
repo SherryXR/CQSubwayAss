@@ -1,7 +1,7 @@
 package com.sherry.cqsubwayass.widget;
 
 /**
- * Created by Kevin Liu on 2016/12/21.
+ * Created by Sherry  on 2016/12/21.
  * Function：
  */
 

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by Kevin Liu on 2018/4/10.
+ * Created by Sherry on 2018/4/10.
  */
 
 public class FileUtil {

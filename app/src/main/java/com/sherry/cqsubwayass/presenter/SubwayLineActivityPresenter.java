@@ -12,7 +12,7 @@ import com.sherry.cqsubwayass.ui.view.ISubwayLineActivity;
 import java.util.List;
 
 /**
- * Created by Kevin Liu on 2018/4/13.
+ * Created by Sherry on 2018/4/13.
  */
 
 public class SubwayLineActivityPresenter {

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Kevin Liu on 2018/4/14.
+ * Created by Sherry on 2018/4/14.
  */
 
 public class SubwayLineAdapter extends RecyclerView.Adapter<SubwayLineAdapter.SubwayLineViewHolder>{
