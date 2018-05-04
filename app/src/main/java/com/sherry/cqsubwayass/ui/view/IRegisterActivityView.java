@@ -4,7 +4,7 @@ import com.sherry.cqsubwayass.model.bmob.User;
 import com.sherry.cqsubwayass.model.callback.RegisterCallBack;
 
 /**
- * Created by Kevin Liu on 2018/4/15.
+ * Created by Sherry on 2018/4/15.
  */
 
 public interface IRegisterActivityView {

@@ -7,7 +7,7 @@ import com.sherry.cqsubwayass.model.impl.SubwayInfoModel;
 import com.sherry.cqsubwayass.ui.view.IGoOutFragmentView;
 
 /**
- * Created by Kevin Liu on 2018/4/11.
+ * Created by Sherry on 2018/4/11.
  */
 
 public class GoOutFragmentPresenter {

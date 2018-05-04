@@ -1,7 +1,7 @@
 package com.sherry.cqsubwayass.ui.view;
 
 /**
- * Created by Kevin Liu on 2018/4/11.
+ * Created by Sherry on 2018/4/11.
  */
 
 public interface IGoOutFragmentView {

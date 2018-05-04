@@ -30,7 +30,7 @@ import butterknife.Unbinder;
 import cn.bmob.v3.BmobUser;
 
 /**
- * Created by Kevin Liu on 2018/4/8.
+ * Created by Sherry on 2018/4/8.
  */
 
 public class MineFragment extends Fragment implements View.OnClickListener{

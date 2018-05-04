@@ -13,7 +13,7 @@ import com.sherry.cqsubwayass.ui.adapter.StationRvAdapter;
 import com.sherry.cqsubwayass.ui.view.IStationFragmentView;
 
 /**
- * Created by Kevin Liu on 2018/4/13.
+ * Created by Sherry on 2018/4/13.
  */
 
 public class StationFragmentPresenter {

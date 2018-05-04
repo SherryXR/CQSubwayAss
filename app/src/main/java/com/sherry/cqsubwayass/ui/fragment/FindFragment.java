@@ -14,7 +14,7 @@ import com.sherry.cqsubwayass.presenter.FindFragmentPresenter;
 import com.sherry.cqsubwayass.ui.view.IFindFragmetView;
 
 /**
- * Created by Kevin Liu on 2018/4/8.
+ * Created by Sherry on 2018/4/8.
  */
 
 public class FindFragment extends Fragment implements IFindFragmetView{

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Kevin Liu on 2018/4/11.
+ * Created by Sherry on 2018/4/11.
  */
 
 public class GuideHistoryAdapter extends RecyclerView.Adapter<GuideHistoryAdapter.GuideHistoryViewHolder> {

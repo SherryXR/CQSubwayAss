@@ -20,7 +20,7 @@ import com.sherry.cqsubwayass.ui.view.IStationFragmentView;
 import java.util.zip.Inflater;
 
 /**
- * Created by Kevin Liu on 2018/4/8.
+ * Created by Sherry on 2018/4/8.
  */
 
 public class StationFragment extends Fragment implements IStationFragmentView{

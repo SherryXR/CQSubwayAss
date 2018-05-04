@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Kevin Liu on 2016/12/20.
+ * Created by Sherry on 2016/12/20.
  * Function：
  */
 

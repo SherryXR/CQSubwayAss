@@ -42,7 +42,7 @@ import static android.support.v4.app.ActivityCompat.requestPermissions;
 
 
 /**
- * Created by Kevin Liu on 2018/4/9.
+ * Created by Sherry on 2018/4/9.
  */
 
 public class BaseApplication extends LitePalApplication {

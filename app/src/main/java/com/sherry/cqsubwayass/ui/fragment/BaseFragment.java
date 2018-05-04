@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.sherry.cqsubwayass.R;
 
 /**
- * Created by Kevin Liu on 2018/4/8.
+ * Created by Sherry on 2018/4/8.
  */
 
 public class BaseFragment extends Fragment {
