@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
@@ -59,6 +60,7 @@ public class GoOutFragment extends Fragment implements IGoOutFragmentView{
                 goOutFragmentPresenter.tendToLineActivity();
             }
         });
+
 
 
     }

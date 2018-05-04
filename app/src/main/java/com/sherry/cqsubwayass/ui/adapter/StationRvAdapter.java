@@ -1,5 +1,6 @@
 package com.sherry.cqsubwayass.ui.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +22,11 @@ public class StationRvAdapter extends RecyclerView.Adapter<StationRvAdapter.Stat
 
     private List<SubwayInfo> lists = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
+    private Context context;
 
-    public StationRvAdapter(List<SubwayInfo> lists) {
+    public StationRvAdapter(List<SubwayInfo> lists,Context context) {
         this.lists =lists;
+        this.context = context;
     }
 
     public void setOnItemClickLitener(OnItemClickListener mOnItemClickLitener) {
@@ -40,7 +43,7 @@ public class StationRvAdapter extends RecyclerView.Adapter<StationRvAdapter.Stat
     public void onBindViewHolder(final StationRvViewHolder holder, final int position) {
         holder.subway_name.setText(lists.get(position).getSubway_name());
         holder.subway_bg.setBackgroundColor(lists.get(position).getSubway_color());
-        holder.subway_name.setTextColor(lists.get(position).getSubway_color());
+        holder.subway_name.setTextColor(context.getResources().getColor(R.color.grey_dark));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

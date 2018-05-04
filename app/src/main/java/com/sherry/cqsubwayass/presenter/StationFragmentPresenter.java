@@ -33,7 +33,7 @@ public class StationFragmentPresenter {
 
     public void loadSubway(RecyclerView rv){
         iStationFragmentView.showRv();
-        adapter =new StationRvAdapter(iSubwayInfo.loadData());
+        adapter =new StationRvAdapter(iSubwayInfo.loadData(),context);
         iStationFragmentView.toSubwayLine(adapter);
         rv.setAdapter(adapter);
     }

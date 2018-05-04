@@ -52,8 +52,6 @@ public class BaseApplication extends LitePalApplication {
     public void onCreate() {
         FileUtil.setMapCustomFile(this, Contants.CUSTOM_CONFIG_MAP_PATH);
         super.onCreate();
-
-
         SDKInitializer.initialize(getApplicationContext());
         Bmob.initialize(this, "f3ecb71a10353c2f309ca1d54c820ac4");
         if ((boolean) SPUtils.get(this,"isFirstOpen",true)){

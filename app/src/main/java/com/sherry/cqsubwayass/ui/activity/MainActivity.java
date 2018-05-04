@@ -13,6 +13,8 @@ import com.sherry.cqsubwayass.app.BaseActivty;
 import com.sherry.cqsubwayass.presenter.MainActivityPresenter;
 import com.sherry.cqsubwayass.ui.adapter.MainViewPagerAdapter;
 import com.sherry.cqsubwayass.ui.view.IMainActivityView;
+import com.sherry.cqsubwayass.utils.BottomNavigationViewHelper;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -39,7 +41,7 @@ public class MainActivity extends BaseActivty implements IMainActivityView {
          * BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
          * ------------------------------------------------------------------------
          */
-
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
