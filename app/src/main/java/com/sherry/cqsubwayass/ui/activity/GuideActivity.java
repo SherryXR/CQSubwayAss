@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.sherry.cqsubwayass.R;
 import com.sherry.cqsubwayass.app.BaseActivty;
+import com.sherry.cqsubwayass.model.callback.OnItemClickListener;
 import com.sherry.cqsubwayass.model.db.History;
 import com.sherry.cqsubwayass.ui.adapter.GuideHistoryAdapter;
 
@@ -54,12 +55,20 @@ public class GuideActivity extends BaseActivty {
     LinearLayout activityGuide;
     private GuideHistoryAdapter guideHistoryAdapter;
     private List<History> historyList = new ArrayList<>();
+    private String toStation = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line);
         ButterKnife.bind(this);
+        Intent intent =getIntent();
+        toStation = intent.getStringExtra("screen");
+        if (toStation.equals("")){
+
+        }else {
+            guideToEdt.setText(toStation);
+        }
         initView();
         historyList.clear();
     }
@@ -129,10 +138,21 @@ public class GuideActivity extends BaseActivty {
         historyList= DataSupport.findAll(History.class);
         if (historyList.size() != 0){
             guideClearData.setVisibility(View.VISIBLE);
+
+
         }else {
             guideClearData.setVisibility(View.GONE);
         }
         guideHistoryAdapter = new GuideHistoryAdapter(GuideActivity.this,historyList);
+        guideHistoryAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent toResult = new Intent(GuideActivity.this,GuideShowAvitivty.class);
+                toResult.putExtra("from",historyList.get(position).getFrom());
+                toResult.putExtra("to",historyList.get(position).getTo());
+                startActivity(toResult);
+            }
+        });
         guideRv.setAdapter(guideHistoryAdapter);
     }
 

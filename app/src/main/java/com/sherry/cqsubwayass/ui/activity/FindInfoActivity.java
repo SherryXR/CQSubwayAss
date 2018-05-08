@@ -3,7 +3,6 @@ package com.sherry.cqsubwayass.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -13,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.sherry.cqsubwayass.R;
 import com.sherry.cqsubwayass.app.BaseActivty;
 import com.sherry.cqsubwayass.model.ICollect;
@@ -50,9 +51,14 @@ public class FindInfoActivity extends BaseActivty {
     WebView findInfoWeb;
     @BindView(R.id.find_info_collect)
     FloatingActionButton findInfoCollect;
+    @BindView(R.id.find_info_line)
+    FloatingActionButton findInfoLine;
+    @BindView(R.id.fab_menu)
+    FloatingActionsMenu fabMenu;
+
 
     private WebSettings webSettings;
-
+    private String toStation;
     private boolean isCollected = false;
     private FindBean findBean;
     private ICollect iCollect;
@@ -74,7 +80,7 @@ public class FindInfoActivity extends BaseActivty {
                     iCollect.cancelCollect(collectID, new BaseCallBack<String>() {
                         @Override
                         public void onSuccess(String bean) {
-                            findInfoCollect.setImageResource(R.mipmap.ic_collected_unselect);
+                            findInfoCollect.setIcon(R.mipmap.ic_collected_unselect);
                             Toast.makeText(FindInfoActivity.this,"取消收藏成功",Toast.LENGTH_SHORT).show();
                         }
 
@@ -88,7 +94,7 @@ public class FindInfoActivity extends BaseActivty {
                     iCollect.postCollect(findBean.getId(), new BaseCallBack<String>() {
                         @Override
                         public void onSuccess(String bean) {
-                            findInfoCollect.setImageResource(R.mipmap.ic_collected);
+                            findInfoCollect.setIcon(R.mipmap.ic_collected);
                             Toast.makeText(FindInfoActivity.this,"收藏成功",Toast.LENGTH_SHORT).show();
 
                         }
@@ -100,6 +106,68 @@ public class FindInfoActivity extends BaseActivty {
                     });
                 }
 
+            }
+        });
+        findInfoLine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FindInfoActivity.this,GuideActivity.class);
+                switch (findBean.getTitle()){
+                    case "洪崖洞" :
+                        toStation = "临江门";
+                        break;
+                    case "磁器口" :
+                        toStation = "磁器口";
+                        break;
+                    case "解放碑" :
+                        toStation = "较场口";
+                        break;
+                    case "长江索道" :
+                        toStation = "小什字";
+                        break;
+                    case "南山一棵树" :
+                        toStation = "上新街";
+                        break;
+                    case "山城第三步道" :
+                        toStation = "较场口";
+                        break;
+                    case "四川美术学院" :
+                        toStation = "杨家坪";
+                        break;
+                    case "朝天门" :
+                        toStation = "小什字";
+                        break;
+                    case "李子坝站" :
+                        toStation = "李子坝";
+                        break;
+                    case "皇冠大扶梯" :
+                        toStation = "两路口";
+                        break;
+                    case "美心洋人街公园" :
+                        toStation = "上新街";
+                        break;
+                    case "下浩老街" :
+                        toStation = "小什字";
+                        break;
+                    case "南山植物园" :
+                        toStation = "上新街";
+                        break;
+                    case "重庆动物园" :
+                        toStation = "动物园";
+                        break;
+                    case "重庆园博园" :
+                        toStation = "园博园";
+                        break;
+                    case "南滨路" :
+                        toStation = "工贸";
+                        break;
+                    case "三峡博物馆" :
+                        toStation = "曾家岩";
+                        break;
+
+                }
+                intent.putExtra("screen",toStation);
+                startActivity(intent);
             }
         });
         initBanner();
@@ -162,7 +230,7 @@ public class FindInfoActivity extends BaseActivty {
                     if (findBean.getId().equals(bean.get(i).getId())){
                         isCollected = true;
                         collectID = bean.get(i).getCollectID();
-                        findInfoCollect.setImageResource(R.mipmap.ic_collected);
+                        findInfoCollect.setIcon(R.mipmap.ic_collected);
                     }
                 }
             }

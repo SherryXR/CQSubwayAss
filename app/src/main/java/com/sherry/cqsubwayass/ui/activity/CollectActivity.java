@@ -75,9 +75,17 @@ public class CollectActivity extends AppCompatActivity {
     private void loadData(){
         iCollect.getColelct(new BaseCallBack<List<FindBean>>() {
             @Override
-            public void onSuccess(List<FindBean> bean) {
+            public void onSuccess(final List<FindBean> bean) {
                 adapter = new FindShowAdapter(bean);
                 collect.setAdapter(adapter);
+                adapter.setOnItemClickLitener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(CollectActivity.this, FindInfoActivity.class);
+                        intent.putExtra("findScreen",bean.get(position));
+                        startActivity(intent);
+                    }
+                });
                 DialogUtils.dissmissProcess();
             }
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sherry.cqsubwayass.R;
+import com.sherry.cqsubwayass.model.callback.OnItemClickListener;
 import com.sherry.cqsubwayass.model.db.History;
 
 import java.util.ArrayList;
@@ -22,6 +23,11 @@ public class GuideHistoryAdapter extends RecyclerView.Adapter<GuideHistoryAdapte
 
     private List<History> historyList = new ArrayList<>();
     private Context context;
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener itemClickListener){
+        this.onItemClickListener = itemClickListener;
+    }
 
     public GuideHistoryAdapter(Context context,List<History> data){
         this.context = context;
@@ -40,9 +46,15 @@ public class GuideHistoryAdapter extends RecyclerView.Adapter<GuideHistoryAdapte
     }
 
     @Override
-    public void onBindViewHolder(GuideHistoryViewHolder holder, int position) {
+    public void onBindViewHolder(GuideHistoryViewHolder holder, final int position) {
         holder.from.setText(historyList.get(position).getFrom()+" ----");
         holder.to.setText(" "+historyList.get(position).getTo());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onItemClick(v,position);
+            }
+        });
     }
 
     @Override
