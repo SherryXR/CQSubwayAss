@@ -91,8 +91,6 @@ public class RegisterActivity extends BaseActivty implements IRegisterActivityVi
                 if(e==null){
                     DialogUtils.dissmissProcess();
                     Toast.makeText(RegisterActivity.this,"注册成功!",Toast.LENGTH_SHORT).show();
-                    Intent tologin = new Intent(RegisterActivity.this, PrepareActivity.class);
-                    startActivity(tologin);
                     finish();
                 }else{
                     DialogUtils.dissmissProcess();

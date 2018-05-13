@@ -53,20 +53,22 @@ public class LoginActivity extends BaseActivty implements View.OnClickListener{
     }
 
     private void initData() {
-        BmobUser.loginByAccount(loginEmailEdit.getText().toString(), loginPasswordEdit.getText().toString(), new LogInListener<User>() {
+        Log.d("LOGIN---->","执行initData");
 
+        BmobUser.loginByAccount(loginEmailEdit.getText().toString(), loginPasswordEdit.getText().toString(), new LogInListener<User>() {
             @Override
             public void done(User user, BmobException e) {
-                if(user!=null){
+                if(e==null){
                     DialogUtils.dissmissProcess();
                     Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
                     UserUtils.putName(LoginActivity.this,(String) BmobUser.getObjectByKey("username"));
                     UserUtils.putEmail(LoginActivity.this,(String) BmobUser.getObjectByKey("email"));
                     UserUtils.putHeardImage(LoginActivity.this,(String) BmobUser.getObjectByKey("headImage"));
-                    UserUtils.putCollect(LoginActivity.this,(String) BmobUser.getObjectByKey("collect"));
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
+
                 }else {
+                    Log.d("LOGIN---->","user 等于空" +e.toString());
                     Toast.makeText(LoginActivity.this,"账号或密码填写错误",Toast.LENGTH_SHORT).show();
                     DialogUtils.dissmissProcess();
 

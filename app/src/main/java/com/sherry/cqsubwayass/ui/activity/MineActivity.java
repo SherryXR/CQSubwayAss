@@ -27,6 +27,7 @@ import com.sherry.cqsubwayass.model.bmob.User;
 import com.sherry.cqsubwayass.model.callback.DialogDataCallBack;
 import com.sherry.cqsubwayass.utils.ActivityCollector;
 import com.sherry.cqsubwayass.utils.DialogUtils;
+import com.sherry.cqsubwayass.utils.SPUtils;
 import com.sherry.cqsubwayass.utils.UserUtils;
 import com.squareup.picasso.Picasso;
 
@@ -177,6 +178,7 @@ public class MineActivity extends BaseActivty {
                         BmobUser.logOut();   //清除缓存用户对象
                         startActivity(new Intent(MineActivity.this,PrepareActivity.class));
                         ActivityCollector.finishAll();
+                        SPUtils.clear(MineActivity.this);
 
                     }
 

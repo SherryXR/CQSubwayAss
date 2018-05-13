@@ -84,7 +84,6 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         super.onResume();
         name.setText(UserUtils.getName(getActivity()));
         email.setText(UserUtils.getEmail(getActivity()));
-        //  Glide.with(getActivity()).load((String)BmobUser.getObjectByKey("headImage")).into(circleImageView);
         Picasso.with(getActivity()).load(UserUtils.getHeadImage(getActivity())).placeholder(R.mipmap.ic_boy).into(circleImageView);
         Log.d("FragmentMine---->","图片地址："+UserUtils.getHeadImage(getActivity()));
     }
@@ -124,12 +123,10 @@ public class MineFragment extends Fragment implements View.OnClickListener{
                     @Override
                     public void onPositive(String message) {
                         Toast.makeText(getActivity(),"谢谢您的反馈,我会努力做的更好~",Toast.LENGTH_SHORT).show();
-
                     }
 
                     @Override
                     public void onNeigitive() {
-
                     }
                 });
                 break;
