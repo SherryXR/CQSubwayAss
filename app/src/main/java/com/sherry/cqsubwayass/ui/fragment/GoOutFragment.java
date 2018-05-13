@@ -68,6 +68,7 @@ public class GoOutFragment extends Fragment implements IGoOutFragmentView{
     @Override
     public void toLineActivity() {
         Intent toLineActivity =new Intent(getActivity(), GuideActivity.class);
+        toLineActivity.putExtra("screen","");
         startActivity(toLineActivity);
     }
 
